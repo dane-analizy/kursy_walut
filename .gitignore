@@ -1,0 +1,25 @@
+# Output files
+output/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+*.aux
+*.out
+*.toc
+__pycache__/
+
+# IDE files
+.vscode/
+.idea/
+
+# Python virtual environment
+venv/
+.env/
+output_data/**/
+
+

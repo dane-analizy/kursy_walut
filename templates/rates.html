@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kursy walut: {{ current_currency.upper() }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        form {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        select,
+        input,
+        button {
+            margin-right: 20px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 8px 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .currency-header {
+            font-size: 24px;
+            color: #333;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- wybieraki -->
+    <form id="currencyForm" action="" method="get">
+        <label for="currency">Wybierz walutę:</label>
+        <select id="currency" name="currency">
+            {% for currency in currencies %}
+            <option value="{{ currency }}" {% if currency==current_currency %}selected{% endif %}>{{ currency.upper() }}
+            </option>
+            {% endfor %}
+        </select>
+        <label for="date_from">Zakres dat od:</label>
+        <input type="date" id="date_from" name="date_from"
+            value="{{ selected_date_from if selected_date_from else '' }}">
+
+        <label for="date_to">do:</label>
+        <input type="date" id="date_to" name="date_to" value="{{ selected_date_to if selected_date_to else '' }}">
+
+        <button type="button" onclick="submitForm()">Notowania</button>
+    </form>
+
+    <div class="currency-header">
+        Kursy waluty: {{ current_currency.upper() if current_currency else "Wybierz walutę" }}
+    </div>
+
+    <!-- wykres -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <canvas id="exchangeRateChart"></canvas>
+
+    <!-- tabela -->
+    <table>
+        <thead>
+            <tr>
+                <th>Data notowania</th>
+                <th>Kurs (PLN)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in data %}
+            <tr>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.rate }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function submitForm() {
+            let currency = document.getElementById("currency").value || "eur";
+            let dateFrom = document.getElementById("date_from").value;
+            let dateTo = document.getElementById("date_to").value;
+            let url = `/kurs/${currency}`;
+            if (dateFrom) {
+                url += `/${dateFrom}`;
+                if (dateTo) {
+                    url += `/${dateTo}`;
+                }
+            }
+            window.location.href = url;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById('exchangeRateChart').getContext('2d');
+            const labels = {{ data | map(attribute = 'date') | list | tojson }};
+            const rates = {{ data | map(attribute = 'rate') | list | tojson }};
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: rates,
+                        borderColor: 'blue',
+                        backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                        fill: true,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Data' } },
+                        y: { title: { display: true, text: 'Kurs' } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

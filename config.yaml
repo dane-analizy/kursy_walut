@@ -1,0 +1,17 @@
+start_date: 2024-01-01
+currencies:
+  - eur
+  - usd
+  - jpy
+  - chf
+  - gbp
+output_folder: output_data
+save_to_file: true
+save_to_db: true
+db_type: sqlite
+sqlite_database_file: data.sqlite
+db_host: xxx
+dh_port: xxx
+db_name: xxx
+db_user: xxx
+db_pass: xxx

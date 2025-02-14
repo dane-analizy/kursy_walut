@@ -2,7 +2,7 @@
 
 Repozytorium jest zapisem kodu dla ebooka uczącego programowania w Pythonie.
 
-Szczegóły znajdziesz na [**stronie**]([https://dane-i-analizy.salescrm.pl/ebook-budowa-aplikacji-walutowej), tam też [**kupisz książkę**](https://dane-i-analizy.salescrm.pl/cart/add_product/ebook-budowa-aplikacji-walutowej).
+Szczegóły znajdziesz na [**stronie**](https://dane-i-analizy.salescrm.pl/ebook-budowa-aplikacji-walutowej), tam też [**kupisz książkę**](https://dane-i-analizy.salescrm.pl/cart/add_product/e-book-budowa-aplikacji-walutowej).
 
 ## Czego się nauczysz?
 

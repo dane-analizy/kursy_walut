@@ -4,7 +4,7 @@ Repozytorium jest zapisem kodu dla ebooka uczącego programowania w Pythonie.
 
 ![](assets/ebook_okladka_small.png)
 
-Szczegóły znajdziesz na [**stronie**](https://dane-i-analizy.salescrm.pl/e-book-budowa-aplikacji-walutowej), tam też [**kupisz książkę**](https://dane-i-analizy.salescrm.pl/cart/add_product/e-book-budowa-aplikacji-walutowej).
+Szczegóły znajdziesz na [**stronie**](https://dane-i-analizy.salescrm.pl/e-book-budowa-aplikacji-walutowej?utm_campaign=kurs_nbp&utm_medium=github&utm_source=github), tam też [**kupisz książkę**](https://dane-i-analizy.salescrm.pl/cart/add_product/e-book-budowa-aplikacji-walutowej?utm_campaign=kurs_nbp&utm_medium=github&utm_source=github).
 
 ## Czego się nauczysz?
 
@@ -71,4 +71,4 @@ Zobacz [**fragment**](assets/ebook_nbp_fragment.pdf) - przykładowe cztery stron
 
 ## Zakup
 
-[**Książkę kupisz**](https://dane-i-analizy.salescrm.pl/cart/add_product/e-book-budowa-aplikacji-walutowej) za 39 zł.
+[**Książkę kupisz**](https://dane-i-analizy.salescrm.pl/cart/add_product/e-book-budowa-aplikacji-walutowej?utm_campaign=kurs_nbp&utm_medium=github&utm_source=github) za 39 zł.

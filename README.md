@@ -19,6 +19,8 @@ Szczegóły znajdziesz na [**stronie**](https://dane-i-analizy.salescrm.pl/e-boo
 💻 **Kompletne przykłady kodu** gotowe do użycia \
 🎓 **Zadania** do samodzielnego wykonania
 
+Zobacz [**fragment**](assets/ebook_nbp_fragment.pdf) - przykładowe cztery strony.
+
 ## Program kursu
 
 ### 1. Pierwsze kroki

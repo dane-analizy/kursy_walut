@@ -66,3 +66,7 @@ Zobacz [**fragment**](assets/ebook_nbp_fragment.pdf) - przykładowe cztery stron
 - Pomysły na rozbudowę aplikacji
 - Wskazówki do dalszego rozwoju
 - Dostęp do gotowego rozwiązania
+
+## Zakup
+
+[**Książkę kupisz**](https://dane-i-analizy.salescrm.pl/cart/add_product/e-book-budowa-aplikacji-walutowej) za 39 zł.
